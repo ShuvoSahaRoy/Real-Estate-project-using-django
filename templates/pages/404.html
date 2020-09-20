@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% load humanize %}
+{% block content %}
+<center>
+<h1>Page not found. Please check your web address.</h1>
+</center>
+<a href="{%url 'index' %}"><button class="btn btn-secondary btn-block mt-4">Home</button></a>
+
+{% endblock %}
