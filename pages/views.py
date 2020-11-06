@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.views.generic import TemplateView
+
 from listings.choices import price_choices, bedroom_choices, state_choices
 
 from listings.models import Listing
@@ -32,5 +34,8 @@ def about(request):
     return render(request, 'pages/about.html', context)
 
 
-def error_404_view(request,exception):
-    return render(request,'pages/404.html')
+class ErrorTemplateView(TemplateView):
+
+    def get_template_names(self):
+        template_name = "pages/404.html"
+        return template_name
